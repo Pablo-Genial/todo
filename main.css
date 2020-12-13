@@ -44,8 +44,6 @@ h3 {
     background-color: rgb(230, 250, 240);
     }
 
-
-
 .body__todo-insert {
    display: flex;
    justify-content: center;
@@ -64,6 +62,7 @@ h3 {
 .todo__input {
     margin-right: 2px;
     width: 90%;
+
 }
  .todo__btn{
     width: 10%;
@@ -92,7 +91,6 @@ h3 {
     color: rgb(100,100,100);
     background-color: transparent;
     }
-
 
 
 .todo__footer {
