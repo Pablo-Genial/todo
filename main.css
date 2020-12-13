@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(253, 116, 106);
+    }
+
+h1 {
+    font-size: 1,8rem;
+    color: rgb(255,255,255);
+    width: 100%;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color:rgb(255, 100, 90);
+}
+
+.container {
+    display: flexbox;
+    width: 50vw;
+    height: 80%;
+    justify-content:center;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px transparent;
+    border-radius: 1%;
+    background-color: rgb(230, 250, 240);
+    }
+
+
+
+.body__todo-insert {
+   display: flex;
+   justify-content: center;
+   margin: 2rem 0rem;
+   width: 100%;
+  }
+
+.todo__input, .todo__btn{
+    border: solid 1px rgb(229, 213, 212);
+    line-height: 1.8rem;
+    font-style: italic;
+    border-radius: 5%;
+    padding-left: .5rem;
+}
+
+.todo__input {
+    margin-right: 2px;
+    width: 90%;
+}
+ .todo__btn{
+    width: 10%;
+    color: white;
+    margin: 0;
+    justify-content: center;
+    padding: 0;
+    background-color: rgb(200,200,200);
+ }
+
+.todo__list--pending > div {
+    border: solid 1px rgb(229, 213, 212);
+    background-color: rgb(200,200,200);
+    line-height: 1.8rem;
+    font-style: italic;
+    margin-right: 2px;
+    margin-top: 2px;
+    border-radius: 5%;
+    padding-left: .5rem;
+}
+
+.fa-button {
+    position: absolute;
+    right: 28%;
+    font-size: 1.5rem;
+    color: rgb(100,100,100);
+    background-color: transparent;
+    }
+
+
+
+.todo__footer {
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+
+.footer__btn--complete, .footer__btn--clear {
+    width: 30%;
+    align-items: flex-end;
+    font-weight: bold;
+    line-height: 24px;
+    border: solid 1px rgb(229, 213, 212);
+    border-radius: 2%;
+    margin: 2px;
+    cursor: pointer;
+    word-wrap: normal;
+}
