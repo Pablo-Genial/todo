@@ -84,13 +84,19 @@ h3 {
     padding-left: .5rem;
 }
 
-.fa-button {
+.trash-button {
     position: absolute;
     right: 28%;
     font-size: 1.5rem;
     color: rgb(100,100,100);
     background-color: transparent;
+    opacity: 0;
     }
+
+.trash-button:hover {
+    opacity: 100;
+    cursor: pointer;
+      }
 
 
 .todo__footer {

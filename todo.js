@@ -1,16 +1,17 @@
 // Egy olyan függvény, ami tudja kezelni a localStorage-ot
 (function () {
-    // Mock data. Az adatokat dinamikusan kapjuk
+    
     let todos = [];
-    // Parts of date
+   
     const bodyDay = document.querySelector('.body__day');
     const bodyDate = document.querySelector('.body__date');
     const todoAddBtn = document.querySelector('.todo__btn');
     const todoInput = document.querySelector('.todo__input');
     const clearAllBtn = document.querySelector('.footer__btn--clear');
     const todoListPending = document.querySelector('.todo__list--pending');
-    const todoListDone = document.querySelector('.todo__list--done');
     const tasksPending = document.querySelector('.todo__number');
+    const todoListDone = document.querySelector('.todo__list--done');
+    const trashCan = document.querySelector('.trash-button');
 
     const dayNames = [
         'Sunday',
@@ -24,27 +25,28 @@
 
     // LocalStorage handler object
     const localDB = {
-        // localDB.setItem('todos', todos);
+    // localDB.setItem('todos', todos);
         setItem(key, value) {
             value = JSON.stringify(value);
             localStorage.setItem(key, value);
         },
-        // localDB.getItem('todos');
+    // localDB.getItem('todos');
         getItem(key) {
             const value = localStorage.getItem(key);
             if (!value) {
                 return null;
             }
-
             return JSON.parse(value);
         },
-        // localDB.removeItem('todos');
+    // localDB.removeItem('todos');
         removeItem(key) {
             localStorage.removeItem(key);
         },
+    
         clearValueArray() {
             localStorage.clear();
         },
+
         getValueLength(key) {
             const value = localStorage.getItem(key);
             const valueArray = JSON.parse(value);
@@ -80,9 +82,10 @@
     // Set eventlisteners.
     const setListeners = () => {
         todoAddBtn.addEventListener('click', addNewTodo);
-        clearAllBtn.addEventListener('click', clearAll)
+        // trashCan.addEventListener('click', deleteATodo);
+        clearAllBtn.addEventListener('click', clearAll);
     };
-
+    
     // Save and add todo to the database.
     const addNewTodo = () => {
         const value = todoInput.value;
@@ -111,12 +114,15 @@
         todoItem.innerHTML = `
             <input type="checkbox">
             <span>${todo.text}</span>
-            <button class="fa-button">
+            <button class="trash-button">
                 <i class="fa fa-trash""></i>
             </button>
         `;
     }
 
+
+
+    // Clear all todos.
     const clearAll = () => {
         todos = [];
         localDB.setItem('todos', todos);
